@@ -1,0 +1,12 @@
+{
+  "arrow1": ["iconfont icon-jiantou12", 45],
+  "arrow2": ["iconfont icon-sanjiao3-copy", 90],
+  "arrow3": ["iconfont icon-yousanjiao", 90],
+  "arrow4": ["iconfont icon-yousanjiao", "iconfont icon-sanjiao3"],
+  "arrow5": ["iconfont icon-wenjianjia", "iconfont icon-wenjianjiafolder80"],
+  "arrow6": ["iconfont icon-wenjianjiashouqi", "iconfont icon-wenjianjiazhankai"],
+  "arrow7": ["iconfont icon-tongxunguanli", "iconfont icon-tongxunguanlizhankai"],
+  "arrow8": ["iconfont icon-jiahao", "iconfont icon-jianhao1"],
+  "arrow9": ["iconfont icon-shousuojiahao", "iconfont icon-shousuojianhao"],
+  "arrow10": ["iconfont icon-jiajianchengchu-1", "iconfont icon-jiajianchengchu-"]
+}

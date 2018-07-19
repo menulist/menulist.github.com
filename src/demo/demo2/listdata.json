@@ -1,0 +1,289 @@
+[
+  {
+    "name": "首页",
+    "parameter": "/xyz",
+    "icon": "fa fa-home",
+    "children": []
+  },
+  {
+    "name": "文档",
+    "parameter": "/xyz",
+    "icon": "fa fa-file-text-o",
+    "children": []
+  },
+  {
+    "name": "引导页",
+    "parameter": "/xyz",
+    "icon": "fa fa-paper-plane-o",
+    "children": []
+  },
+  {
+    "name": "权限测试页",
+    "icon": "fa fa-lock",
+    "parameter": "",
+    "children": [
+      {
+        "name": "页面权限",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "指令权限",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "图标",
+    "parameter": "/xyz",
+    "icon": "fa fa-info",
+    "children": []
+  },
+  {
+    "name": "组件",
+    "parameter": "",
+    "icon": "fa fa-qrcode",
+    "children": [
+      {
+        "name": "富文本编辑器",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Markdown",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "JSON编辑器",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Sqlitpane",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "头像上传",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Dropzone",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Sticky",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "CountTo",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "小组件",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "返回顶部",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "拖拽Dialog",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "列表拖拽",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "可拖拽看板",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "图表",
+    "parameter": "",
+    "icon": "fa fa-bar-chart",
+    "children": [
+      {
+        "name": "键盘图表",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "折线图",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "混合图表",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Tab",
+    "parameter": "/xyz",
+    "icon": "fa fa-calendar-o",
+    "children": []
+  },
+  {
+    "name": "Table",
+    "parameter": "",
+    "icon": "fa fa-calendar",
+    "children": [
+      {
+        "name": "动态Table",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "拖拽Table",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Table内编辑",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "树形表格",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "自定义数表",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "综合Table",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "综合实例",
+    "parameter": "",
+    "icon": "fa fa-life-saver",
+    "children": [
+      {
+        "name": "创建文章",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "文章列表",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "路由嵌套",
+    "parameter": "",
+    "icon": "fa fa-align-right",
+    "children": [
+      {
+        "name": "菜单1",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "菜单2",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "错误页面",
+    "parameter": "",
+    "icon": "fa fa-window-close",
+    "children": [
+      {
+        "name": "401",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "404",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "错误日志",
+    "parameter": "/xyz",
+    "icon": "fa fa-warning",
+    "children": []
+  },
+  {
+    "name": "Excel",
+    "parameter": "",
+    "icon": "fa fa-etsy",
+    "children": [
+      {
+        "name": "Export Excel",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Export Selected",
+        "parameter": "/xyz",
+        "children": []
+      },
+      {
+        "name": "Upload Excel",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Zip",
+    "parameter": "",
+    "icon": "fa fa-shopping-bag",
+    "children": [
+      {
+        "name": "Export Zip",
+        "parameter": "/xyz",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "换肤",
+    "parameter": "/xyz",
+    "icon": "fa fa-cube",
+    "children": []
+  },
+  {
+    "name": "Clipboard",
+    "parameter": "/xyz",
+    "icon": "fa fa-clipboard",
+    "children": []
+  },
+  {
+    "name": "国际化",
+    "parameter": "/xyz",
+    "icon": "fa fa-globe",
+    "children": []
+  }
+]

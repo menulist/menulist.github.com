@@ -1,0 +1,119 @@
+[
+  {
+    "name": "一级目录一",
+    "children": [
+      {
+        "name": "二级目录一",
+        "children": [
+          {
+            "name": "三级目录一",
+            "children": [
+              {
+                "name": "四级目录一",
+                "parameter": 14
+              },
+              {
+                "name": "四级目录二",
+                "parameter": 15,
+                "children": [
+                  {
+                    "name": "五级目录一",
+                    "parameter": "/abc",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "三级目录二",
+            "parameter": 4,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "一级目录二",
+    "parameter": 5,
+    "children": [
+      {
+        "name": "二级目录二",
+        "parameter": 6,
+        "children": [
+          {
+            "name": "三级目录三",
+            "parameter": 7
+          },
+          {
+            "name": "三级目录四",
+            "parameter": 8
+          }
+        ]
+      },
+      {
+        "name": "二级目录三",
+        "parameter": 9,
+        "children": [
+          {
+            "name": "三级目录X",
+            "parameter": 10
+          }
+        ]
+      },
+      {
+        "name": "二级目录四",
+        "parameter": 11,
+        "children": [
+          {
+            "name": "三级目录Y",
+            "parameter": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "一级目录三",
+    "parameter": 13,
+    "children": [
+      {
+        "name": "二级目录五",
+        "parameter": 14,
+        "children": [
+          {
+            "name": "三级目录五",
+            "children": [
+              {
+                "name": "四级目录三",
+                "children": [
+                  {
+                    "name": "52",
+                    "parameter": "/abc",
+                    "children": [
+                      {
+                        "name": "61",
+                        "children":[
+                          {
+                            "name": "71",
+                            "children": [
+                              {
+                                "name": "81",
+                                "parameter": "/abc"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
