@@ -5,7 +5,7 @@
   </div>
   <div class="left">
     <h1>listtree插件使用示例</h1>
-    <a href="/" :class="{demoActive:(elSelect==='/')}" @click="getUrlHash()"><h2>一、仿vue官网左侧菜单</h2>
+    <a href="/" :class="{demoActive:(elSelect==='/')}" @click="getUrl()"><h2>一、仿vue官网左侧菜单</h2>
       <div id="demo1" class="content">
         <p>注意观察vue官网左侧菜单可以发现它有下面几个特性：</p>
         <h3>1. 菜单分支前面没有箭头图标</h3>
@@ -24,7 +24,7 @@
         <span>  实现方法：设置参数 eventArea 的值为 "content" 。</span>
       </div>
     </a>
-    <a href="/demo2" :class="{demoActive:(elSelect==='/demo2')}" @click="getUrlHash()"><h2>二、仿vue-element-admin左侧菜单</h2>
+    <a href="/demo2" :class="{demoActive:(elSelect==='/demo2/')}" @click="getUrl()"><h2>二、仿vue-element-admin左侧菜单</h2>
       <div id="demo2" class="content">
         <p>vue-element-admin左侧菜单有下面几个特性：</p>
         <h3>1. 每个一级菜单分支前面都包含特有的图标（此图标非箭头图标）</h3>
@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    getUrlHash () {
+    getUrl () {
       setTimeout(() => {
         this.elSelect = location.pathname
       }, 0)
