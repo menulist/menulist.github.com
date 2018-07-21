@@ -17,13 +17,19 @@ export default new Router({
       path: '/demo1',
       component: (resolve) => require(['./demo/demo1'], resolve),
       // component: require('./demo/demo1'),
-      name: 'demo1'
+      name: 'demo1',
+      meta: {
+        keepAlive: false // 不需要缓存
+      }
     },
     {
       path: '/demo2',
       component: (resolve) => require(['./demo/demo2'], resolve),
       // component: require('./demo/demo2'),
-      name: 'demo2'
+      name: 'demo2',
+      meta: {
+        keepAlive: false // 不需要缓存
+      }
     }
   ]
 })

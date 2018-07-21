@@ -5,8 +5,8 @@
   </div>
   <div class="left">
     <h1>listtree插件使用示例</h1>
-    <router-link to="/demo1"><h2>一、仿vue官网左侧菜单</h2>
-      <div class="content">
+    <a href="demo1" :class="{demoActive:(elSelect==='/demo1')}"><h2>一、仿vue官网左侧菜单</h2>
+      <div id="demo1" class="content">
         <p>注意观察vue官网左侧菜单可以发现它有下面几个特性：</p>
         <h3>1. 菜单分支前面没有箭头图标</h3>
         <span>  实现方法：设置 arrow 参数为 0。</span>
@@ -23,9 +23,9 @@
         <h3>7. 鼠标点击文字时才会触发事件，点击文字后面的空白处没有反应</h3>
         <span>  实现方法：设置参数 eventArea 的值为 "content" 。</span>
       </div>
-    </router-link>
-    <router-link to="/demo2"><h2>二、仿vue-element-admin左侧菜单</h2>
-        <div class="content">
+    </a>
+    <a href="demo2" :class="{demoActive:(elSelect==='/demo2')}"><h2>二、仿vue-element-admin左侧菜单</h2>
+        <div id="demo2" class="content">
           <p>vue-element-admin左侧菜单有下面几个特性：</p>
           <h3>1. 每个一级菜单分支前面都包含特有的图标（此图标非箭头图标）</h3>
           <span>  实现方法：在listData中为每个一级菜单添加icon属性，下载最新版Font Awesome图标库，并在组件中引入Font Awesome的css文件（如果使用sass或less也可引入Font Awesome的sass或less文件）。</span>
@@ -42,13 +42,21 @@
           <h3>7. 调整图标与文字之间的距离</h3>
           <span>  实现方法：在样式 .lt-branch span 中设置 margin-left 属性。</span>
         </div>
-      </router-link>
+      </a>
   </div>
 </div>
 </template>
 <script>
-  export default {
+export default {
+  data () {
+    return {
+      elSelect: location.pathname
+    }
+  },
+  created () {
+    console.log(location.pathname)
   }
+}
 </script>
 <style scoped>
 @import url('./reset.css');
@@ -78,7 +86,7 @@
   padding:8px;
   cursor: text;
 }
-.router-link-active .content{
+.demoActive .content{
   display:block;
 }
 .content span{

@@ -16,6 +16,7 @@ const tree = {
       animation: o.animation,
       eventArea: o.eventArea
     }})
+    console.log('object')
     setTimeout(() => {
       listtree.$mount('.listtree')
     }, 0)
