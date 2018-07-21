@@ -5,7 +5,7 @@
   </div>
   <div class="left">
     <h1>listtree插件使用示例</h1>
-    <a href="/#" :class="{demoActive:(elSelect==='/#')}"><h2>一、仿vue官网左侧菜单</h2>
+    <a href="/" :class="{demoActive:(elSelect==='/')}" @click="getUrlHash()"><h2>一、仿vue官网左侧菜单</h2>
       <div id="demo1" class="content">
         <p>注意观察vue官网左侧菜单可以发现它有下面几个特性：</p>
         <h3>1. 菜单分支前面没有箭头图标</h3>
@@ -24,25 +24,25 @@
         <span>  实现方法：设置参数 eventArea 的值为 "content" 。</span>
       </div>
     </a>
-    <a href="demo2#" :class="{demoActive:(elSelect==='/demo2#')}"><h2>二、仿vue-element-admin左侧菜单</h2>
-        <div id="demo2" class="content">
-          <p>vue-element-admin左侧菜单有下面几个特性：</p>
-          <h3>1. 每个一级菜单分支前面都包含特有的图标（此图标非箭头图标）</h3>
-          <span>  实现方法：在listData中为每个一级菜单添加icon属性，下载最新版Font Awesome图标库，并在组件中引入Font Awesome的css文件（如果使用sass或less也可引入Font Awesome的sass或less文件）。</span>
-          <h3>2. 菜单的箭头图标在整个菜单的右侧</h3>
-          <span>  实现方法：设置 arrow 为Font Awesome图标库中相应的样式，并设置 arrowLeft 的值为负数 。</span>
-          <h3>3. 每个菜单分支高与背景色一致</h3>
-          <span>  实现方法：在 .lt-branch 里设置所有分支的高与背景色。</span>
-          <h3>4. 二级分支有不一样的背景色</h3>
-          <span>  实现方法：在 .lt-branch_level_2 样式中设置 background-color 属性。</span>
-          <h3>5. 鼠标经过一级分支和二级分支时样式会发生变化</h3>
-          <span>  实现方法：设置样式 .lt-branch:hover 和 .lt-branch_level_2:hover。</span>
-          <h3>6. 菜单展开和闭合动画非渐隐渐现（默认的动画效果在这里体验明显不好）</h3>
-          <span>  实现方法：设置参数 animation 值为2。</span>
-          <h3>7. 调整图标与文字之间的距离</h3>
-          <span>  实现方法：在样式 .lt-branch span 中设置 margin-left 属性。</span>
-        </div>
-      </a>
+    <a href="/demo2" :class="{demoActive:(elSelect==='/demo2')}" @click="getUrlHash()"><h2>二、仿vue-element-admin左侧菜单</h2>
+      <div id="demo2" class="content">
+        <p>vue-element-admin左侧菜单有下面几个特性：</p>
+        <h3>1. 每个一级菜单分支前面都包含特有的图标（此图标非箭头图标）</h3>
+        <span>  实现方法：在listData中为每个一级菜单添加icon属性，下载最新版Font Awesome图标库，并在组件中引入Font Awesome的css文件（如果使用sass或less也可引入Font Awesome的sass或less文件）。</span>
+        <h3>2. 菜单的箭头图标在整个菜单的右侧</h3>
+        <span>  实现方法：设置 arrow 为Font Awesome图标库中相应的样式，并设置 arrowLeft 的值为负数 。</span>
+        <h3>3. 每个菜单分支高与背景色一致</h3>
+        <span>  实现方法：在 .lt-branch 里设置所有分支的高与背景色。</span>
+        <h3>4. 二级分支有不一样的背景色</h3>
+        <span>  实现方法：在 .lt-branch_level_2 样式中设置 background-color 属性。</span>
+        <h3>5. 鼠标经过一级分支和二级分支时样式会发生变化</h3>
+        <span>  实现方法：设置样式 .lt-branch:hover 和 .lt-branch_level_2:hover。</span>
+        <h3>6. 菜单展开和闭合动画非渐隐渐现（默认的动画效果在这里体验明显不好）</h3>
+        <span>  实现方法：设置参数 animation 值为2。</span>
+        <h3>7. 调整图标与文字之间的距离</h3>
+        <span>  实现方法：在样式 .lt-branch span 中设置 margin-left 属性。</span>
+      </div>
+    </a>
   </div>
 </div>
 </template>
@@ -51,6 +51,13 @@ export default {
   data () {
     return {
       elSelect: location.pathname
+    }
+  },
+  methods: {
+    getUrlHash () {
+      setTimeout(() => {
+        this.elSelect = location.pathname
+      }, 0)
     }
   },
   created () {
