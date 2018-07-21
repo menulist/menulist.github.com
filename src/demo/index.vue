@@ -5,7 +5,7 @@
   </div>
   <div class="left">
     <h1>listtree插件使用示例</h1>
-    <a href="demo1" :class="{demoActive:(elSelect==='/demo1')}"><h2>一、仿vue官网左侧菜单</h2>
+    <a href="/" :class="{demoActive:(elSelect==='/demo1'||elSelect==='/')}"><h2>一、仿vue官网左侧菜单</h2>
       <div id="demo1" class="content">
         <p>注意观察vue官网左侧菜单可以发现它有下面几个特性：</p>
         <h3>1. 菜单分支前面没有箭头图标</h3>

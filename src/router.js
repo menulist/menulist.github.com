@@ -6,21 +6,18 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    // {
+    //   path: '/',
+    //   component: (resolve) => require(['./App'], resolve),
+    //   // component: require('./App'),
+    //   name: 'app',
+    //   redirect: '/demo1'
+    // },
     {
       path: '/',
-      component: (resolve) => require(['./App'], resolve),
-      // component: require('./App'),
-      name: 'app',
-      redirect: '/demo1'
-    },
-    {
-      path: '/demo1',
       component: (resolve) => require(['./demo/demo1'], resolve),
       // component: require('./demo/demo1'),
-      name: 'demo1',
-      meta: {
-        keepAlive: false // 不需要缓存
-      }
+      name: 'demo1'
     },
     {
       path: '/demo2',
