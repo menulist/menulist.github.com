@@ -5,7 +5,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import Menutree from '../../lib'
+import Menutree from 'v-menutree'
 import menuData from './menudata.json'
 
 Vue.use(Menutree, {

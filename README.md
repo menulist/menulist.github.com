@@ -1,22 +1,22 @@
 
-# menutree——vue无限级菜单（[在线示例](https://menutree.github.io)）
+# v-menutree——vue无限级菜单（[在线示例](https://menutree.github.io)）
 [![](https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg)](https://www.npmjs.com/package/menutree) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menutree)
 
 menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
 
 ## 安装
 
-    npm install menutree -S
+    npm install v-menutree -S
 
 ## 使用
 
 > 在需要插入菜单的组件插入JS代码：
 
     import Vue from 'vue'
-    import menutree from 'menutree'
+    import Menutree from 'v-menutree'
     import menuData from './menudata.json'
 
-    Vue.use(Listtree, {
+    Vue.use(Menutree, {
       menuData
     })
 
@@ -137,9 +137,9 @@ mytree.vue 组件中的代码如下：
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'menutree'
+    import Menutree from 'v-menutree'
 
-    Vue.use(Listtree, {
+    Vue.use(Menutree, {
       menuData: require('./data.json'),
       arrow: ['iconfont xxxxxxxxxxxxx', 'iconfont yyyyyyyyyyyyyy']
     })
@@ -166,9 +166,9 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，ico
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'menutree'
+    import Menutree from 'v-menutree'
 
-    Vue.use(Listtree, {
+    Vue.use(Menutree, {
       menuData: require('../static/data.json'),
       arrow: ['fa xxxxxxxxxxxxx', 'fa yyyyyyyyyyyyyy']
     })
@@ -193,9 +193,9 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，fa�
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'menutree'
+    import Menutree from 'v-menutree'
 
-    Vue.use(Listtree, {
+    Vue.use(Menutree, {
       menuData: require('../static/data.json'),
       arrow: ['../static/xxxxxxxxxxxxx', '../static/yyyyyyyyyyyyy']
     })
