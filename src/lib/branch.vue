@@ -1,10 +1,10 @@
 <template>
 <div>
-  <div v-for="(item, index) in listData" :key="index">
+  <div v-for="(item, index) in menuData" :key="index">
     <!-- ========= branch ===========树形结构中每个目录为一个独立的分支（branch），一级branch的index为X，二级branch的index为：X-X，三级branch的index为：X-X-X，以此类推 -->
     <!-- 层的编号（index）设计规则：一级分支用一个数字表示，二级用2个数字中间连一个“-”表示，三级分支用三个数字，每个数字中间连“-”……，比如：A-B-C-D-……，其中A表示所属一级分支编号，B表示所属二级分支编号，C表示所属三级分支编号……； -->
     <!-- id 前缀命名规则：branch的前缀为 lt-branch_ ，图标层的前缀为 lt-branch-arrow_ ，图标基座的前缀为 lt-branch-arrow-bg_ ，animation(动画)层前缀为：lt-branch-animation_，box层的前缀为 lt-branch-box_ 。层的 id 就是：前缀+编号 -->
-    <!-- className 规则：所有分支branch都含有 lt-branch，所有的图标都包含：lt-branch-arrow；所有一级分支都包含 lt-branch_level_1，二级分支包含：lt-branch_level_2，三级分支包含：lt-branch_level_3……；所有一级分支图标都包含：lt-branch-arrow_level_1，所有二级分支图标包含：lt-branch-arrow_level_2，所有三级图标包含：lt-branch-arrow_level_3……，如果一个分支下面没有下级分支，那么该分支将包含：lt-branch-arrow_level_0；当前被点击的分支包含：lt-branch_active，当前被点击的分支图标包含：lt-branch-arrow_active，一级分支下级子孙分支被点击后该一级分支将包含：lt-branch_level_1_active，该一级分支的图标将包含： lt-branch-arrow_level_1_active，二级分支下级子孙分支被点击后该二级分支将包含：lt-branch_level_2_active，该二级分支的图标将包含： lt-branch-arrow_level_2_active，三级分支下级子孙分支被点击后该三级分支将包含：lt-branch_level_3_active，该三级分支的图标将包含： lt-branch-arrow_level_3_active……。后面带有active的分支表示正在活动的分支，但只有点击可以打开新路由内容的branch（即在listData中该branch包含parameter属性）才能触发active。 -->
+    <!-- className 规则：所有分支branch都含有 lt-branch，所有的图标都包含：lt-branch-arrow；所有一级分支都包含 lt-branch_level_1，二级分支包含：lt-branch_level_2，三级分支包含：lt-branch_level_3……；所有一级分支图标都包含：lt-branch-arrow_level_1，所有二级分支图标包含：lt-branch-arrow_level_2，所有三级图标包含：lt-branch-arrow_level_3……，如果一个分支下面没有下级分支，那么该分支将包含：lt-branch-arrow_level_0；当前被点击的分支包含：lt-branch_active，当前被点击的分支图标包含：lt-branch-arrow_active，一级分支下级子孙分支被点击后该一级分支将包含：lt-branch_level_1_active，该一级分支的图标将包含： lt-branch-arrow_level_1_active，二级分支下级子孙分支被点击后该二级分支将包含：lt-branch_level_2_active，该二级分支的图标将包含： lt-branch-arrow_level_2_active，三级分支下级子孙分支被点击后该三级分支将包含：lt-branch_level_3_active，该三级分支的图标将包含： lt-branch-arrow_level_3_active……。后面带有active的分支表示正在活动的分支，但只有点击可以打开新路由内容的branch（即在menuData中该branch包含parameter属性）才能触发active。 -->
     <div :id="'lt-branch_'+(branchLevel+(index+1))"
          :data-index="branchLevel+(index+1)"
          :class="branchClassName(branchLevel+(index+1))"
@@ -35,7 +35,7 @@
       <!--=============== box ================= 每个branch下都有个box层，branch所有的下级分支都在box内，branch的展开和闭合就可以用box的显示隐藏来实现。另外box与左边框的距离可以实现上下级branch的缩进 -->
       <div :id="'lt-branch-box_'+(branchLevel+(index+1))"
           :style="branchBoxStyle(branchLevel+(index+1), item.children)">
-        <branch :listData="item.children"
+        <branch :menuData="item.children"
                 :open="open"
                 :openOnly="openOnly"
                 :indent="indent"
@@ -78,7 +78,7 @@ export default {
     },
     clickBranchIndex: '', // -----------被点击的分支index，用户在分支上点击（处于组件branch.vue中）后会触发sendClickBranchIndex事件，上一级组件（上一级branch.vue）监听到sendClickBranchIndex后再运行gitClickBranchIndex事件，gitClickBranchIndex事件里又触发sendClickBranchIndex事件往上传递，一直到组件tree.vue监听到sendClickBranchIndex事件后更改data中的clickBranchIndex，tree.vue下所有的组件都会接受到clickBranchIndex的更改
     // -------------------------------------------以上props内容用户不能控制，以下props用户可以设置-------------------------------
-    listData: { // -----------json格式的数据，每个分支目录有name,parameter,arrow,children四个个字段，name为分支的文字内容（必须有）。parameter为点击分支时跳转的路由地址,如果不跳转可省略parameter字段。arrow为该分支前的图标地址（包括展开时和闭合时的图标，所以arrow是个数组），如果使用默认图标arrow字段可以省略。children为该分支的下级分支，如果没有下级分支children字段也可以省略
+    menuData: { // -----------json格式的数据，每个分支目录有name,parameter,arrow,children四个个字段，name为分支的文字内容（必须有）。parameter为点击分支时跳转的路由地址,如果不跳转可省略parameter字段。arrow为该分支前的图标地址（包括展开时和闭合时的图标，所以arrow是个数组），如果使用默认图标arrow字段可以省略。children为该分支的下级分支，如果没有下级分支children字段也可以省略
       default: function () {
         return []
       }
@@ -104,15 +104,15 @@ export default {
     animation: { // ---animation设为false时不使用动画
       default: 1
     },
-    eventArea: { // ----事件区域，eventArea有2个值分别为'line'和'content'，值为'line'时表示鼠标点击或经过菜单分支所在行时触发Vue.prototype.$listClick和Vue.prototype.$listMouseOver；值为'content'时表示鼠标点击或经过菜单分支文字内容时触发Vue.prototype.$listClick和Vue.prototype.$listMouseOver。
+    eventArea: { // ----事件区域，eventArea有2个值分别为'line'和'content'，值为'line'时表示鼠标点击或经过菜单分支所在行时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver；值为'content'时表示鼠标点击或经过菜单分支文字内容时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver。
       default: 'line'
     }
   },
   methods: {
     MouseOverBranch (parameter, eventArea) { // -----------------------------鼠标经过 branch-------------------------------
       if (eventArea !== this.eventArea) return false
-      if (typeof(this.$listMouseOver) === "function") {
-        this.$listMouseOver(parameter) // ----鼠标经过branch时传递parameter给插件外的组件，插件外的组件通过给Vue的原型添加方法$listMouseOver 来获取参数parameter，并进行一系列的操作
+      if (typeof(this.$menuMouseOver) === "function") {
+        this.$menuMouseOver(parameter) // ----鼠标经过branch时传递parameter给插件外的组件，插件外的组件通过给Vue的原型添加方法$menuMouseOver 来获取参数parameter，并进行一系列的操作
       }
     },
     clickBranch (index, parameter, eventArea) { // -----------------------------branch 点击事件--------------------------------
@@ -127,8 +127,8 @@ export default {
       } else {
         this.setControl(index)
       }
-      if (typeof(this.$listClick) === "function") {
-        this.$listClick(parameter) // ----branch被点击时传递parameter给插件外的组件，插件外的组件通过给Vue的原型添加方法$listClick来获取参数parameter，并进行一系列的操作
+      if (typeof(this.$menuClick) === "function") {
+        this.$menuClick(parameter) // ----branch被点击时传递parameter给插件外的组件，插件外的组件通过给Vue的原型添加方法$menuClick来获取参数parameter，并进行一系列的操作
       }
 
       if (parameter && parameter !== '') {
@@ -294,10 +294,10 @@ export default {
       let theData = ''
 
       if (this.depth === 0) { // --获取branch的children值，如果该branch没有children(即没有子分支)，就给它加上lt-branch_level_0样式
-        theData = this.listData[id - 1]
+        theData = this.menuData[id - 1]
         if (theData.children) theChildren = theData.children
       } else {
-        theData = this.listData[theId.replace(this.branchLevel, '') - 1]
+        theData = this.menuData[theId.replace(this.branchLevel, '') - 1]
         if (theData.children) theChildren = theData.children
       }
 
@@ -318,10 +318,10 @@ export default {
       }
       return branchClass
     },
-    getArrow (index) { // ---------图标来源（权重：listData > 参数arrow > arrow.json。如果一个branch没有子级，那么这个branch没有图标，但如果listData中该branch包含arrow属性，那么这个branch哪怕没有子级它也有自己的图标）
-      /* 从listData读取arrow */
+    getArrow (index) { // ---------图标来源（权重：menuData > 参数arrow > arrow.json。如果一个branch没有子级，那么这个branch没有图标，但如果menuData中该branch包含arrow属性，那么这个branch哪怕没有子级它也有自己的图标）
+      /* 从menuData读取arrow */
       // let arr = index.toString().split('-')
-      // let privatearrow = this.listData[arr[arr.length - 1] - 1].arrow
+      // let privatearrow = this.menuData[arr[arr.length - 1] - 1].arrow
       // if (privatearrow !== undefined && privatearrow.length === 2) {
       //   return privatearrow
       // }
@@ -333,7 +333,7 @@ export default {
         arrow = iconfont['arrow' + arrow] // ----------把arrow.json里的数据赋予arrow
       }
 
-      return arrow // -----不管用户是使用系统默认图标、自定义图片还是使用第三方图标或者在listData中定义图标，arrow都为数组，数组第一个元素为展开时的图标，第二个元素为闭合时图标（数组元素可能是图片地址，也可能是代表第三方图标的className）
+      return arrow // -----不管用户是使用系统默认图标、自定义图片还是使用第三方图标或者在menuData中定义图标，arrow都为数组，数组第一个元素为展开时的图标，第二个元素为闭合时图标（数组元素可能是图片地址，也可能是代表第三方图标的className）
     },
     arrowCloseStyle (index) { // -----箭头图标闭合时的样式
       if (this.getArrow(index)[0].indexOf('/') > -1) { // -----------this.getArrow中的元素包含“/”说明用户使用自定义图片作为图标
@@ -422,10 +422,10 @@ export default {
       let theData = ''
 
       if (this.depth === 0) { // --获取branch的children值，如果该branch没有children(即没有子分支)，就给它加上lt-branch_level_0样式
-        theData = this.listData[index - 1]
+        theData = this.menuData[index - 1]
         if (theData.children) theChildren = theData.children
       } else {
-        theData = this.listData[theId.replace(this.branchLevel, '') - 1]
+        theData = this.menuData[theId.replace(this.branchLevel, '') - 1]
         if (theData.children) theChildren = theData.children
       }
 
@@ -557,7 +557,7 @@ export default {
       if (arrowLeft < 0) return `right: ${Math.abs(arrowLeft)}px;`
       return `left: ${this.indent * this.depth + arrowLeft}px;`
     },
-    branchIconStyle () { // ----图标层样式（此图标层非箭头图标层，而是listData上的icon图标）
+    branchIconStyle () { // ----图标层样式（此图标层非箭头图标层，而是menuData上的icon图标）
       return `position:absolute;
               display:inline-block;
               transform:translateY(-50%);
@@ -594,7 +594,7 @@ export default {
       lt-branch_3: ['close'],
     }
      */
-    for (let n = 1; n < this.listData.length + 1; n++) {
+    for (let n = 1; n < this.menuData.length + 1; n++) {
       this.$set(this.control, 'lt-branch_' + (this.branchLevel + n), ['close']) // ----------默认情况，所有branch都为闭合状态(数组第一个元素表示branch的展开或闭合状态['open'为展开，'close'为闭合]
       this.$set(this.control, 'lt-branch-arrow_' + (this.branchLevel + n), 'show') // ----------默认情况，所有arrow都为显示状态('show'为显示，'hidden'为隐藏)
 

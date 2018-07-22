@@ -1,6 +1,6 @@
 <template>
   <div>
-    <branch :listData="listData"
+    <branch :menuData="menuData"
             :open="open"
             :openOnly="openOnly"
             :indent="indent"
@@ -26,7 +26,7 @@ export default {
       clickBranchIndex: '' // -----------被点击的分支index，当用户点击branch时赋值
     }
   },
-  props: ['listData', 'open', 'openOnly', 'indent', 'arrow', 'arrowLeft', 'arrowSize', 'animation', 'eventArea'],
+  props: ['menuData', 'open', 'openOnly', 'indent', 'arrow', 'arrowLeft', 'arrowSize', 'animation', 'eventArea'],
   methods: {
     getClickBranchIndex (index) {
       this.clickBranchIndex = index

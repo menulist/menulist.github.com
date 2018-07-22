@@ -5,8 +5,8 @@ const tree = {
       Vue = window.Vue
     }
     const LTree = Vue.extend(myTree)
-    const listtree = new LTree({propsData: {
-      listData: o.listData,
+    const menutree = new LTree({propsData: {
+      menuData: o.menuData,
       open: o.open,
       openOnly: o.openOnly,
       indent: o.indent,
@@ -18,7 +18,7 @@ const tree = {
     }})
     console.log('object')
     setTimeout(() => {
-      listtree.$mount('.listtree')
+      menutree.$mount('.menutree')
     }, 0)
   }
 }

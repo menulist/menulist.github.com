@@ -1,25 +1,15 @@
 <template>
 <div>
-  <div class="listtree"></div>
+  <div class="menutree"></div>
 </div>
 </template>
 <script>
 import Vue from 'vue'
-import Listtree from '../../lib'
-import listData from './listdata.json'
+import Menutree from '../../lib'
+import menuData from './menudata.json'
 
-// (function () {
-//   /* 当多次使用Vue.use调用同一个插件时，后面的调用不起作用，这里为了调用不同的示例所以通过强制刷新页面来达到调用的目的，实际项目中一般不会重复调用同一个插件 */
-//   if(sessionStorage.demo !== 'demo1'){
-//     sessionStorage.demo = 'demo1'
-//     location.reload()
-//     return
-//   }
-//   sessionStorage.demo = ''
-// })()
-
-Vue.use(Listtree, {
-  listData,
+Vue.use(Menutree, {
+  menuData,
   arrow: 0,
   indent: 18,
   open:['always', 0, 1],
@@ -27,7 +17,7 @@ Vue.use(Listtree, {
   eventArea:'content'
 })
 
-Vue.prototype.$listClick = (r) => {
+Vue.prototype.$menuClick = (r) => {
   if (typeof r !== 'undefined') {
     console.log(r)
   }

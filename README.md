@@ -1,32 +1,32 @@
 
-# listtree —— vue无限级菜单
-[![](https://img.shields.io/badge/npm-v1.2.8-brightgreen.svg)](https://www.npmjs.com/package/listtree) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/listtree)
+# menutree   vue无限级菜单——[在线示例](https://menutree.github.io)
+[![](https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg)](https://www.npmjs.com/package/menutree) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menutree)
 
-listtree 是基于vue2.x的无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
+menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
 
 ## 安装
 
-    npm install listtree -S
+    npm install menutree -S
 
 ## 使用
 
 > 在需要插入菜单的组件插入JS代码：
 
     import Vue from 'vue'
-    import Listtree from 'listtree'
-    import listData from './listdata.json'
+    import menutree from 'menutree'
+    import menuData from './menudata.json'
 
     Vue.use(Listtree, {
-      listData
+      menuData
     })
 
-    /* $listClick 和 $listMouseOver 非必要
-    Vue.prototype.$listClick = (parameter) => {
+    /* $menuClick 和 $menuMouseOver 非必要
+    Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         // 当点击菜单时你希望系统做的事情可以写在这里（比如路由跳转）
       }
     }
-    Vue.prototype.$listMouseOver = (parameter) => {
+    Vue.prototype.$menuMouseOver = (parameter) => {
       if (parameter !== undefined) {
         // 当鼠标经过菜单时你希望系统做的事情可以写在这里
       }
@@ -35,17 +35,17 @@ listtree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
 
 > 在需要插入菜单的地方插入下面代码：
 
-    <div class="listtree"></div>
+    <div class="menutree"></div>
 
 
-> 其中listdata.json是菜单的数据内容，下面讲参数时会具体说明。
+> 其中menudata.json是菜单的数据内容，下面讲参数时会具体说明。
 ## 参数
 
-> listtree 一共有9个参数：listData、open、openOnly、indent、arrow、arrowSize、arrowLeft、animation、eventArea，通过配置这9个参数可以使 listtree 适应不同类型的菜单需求，为了描述方便，这里假设你要插入本插件的组件为mytree.vue(建议用空组件来引入本插件，然后在需要使用本本插件的地方直接import该组件)
+> menutree 一共有9个参数：menuData、open、openOnly、indent、arrow、arrowSize、arrowLeft、animation、eventArea，通过配置这9个参数可以使 menutree 适应不同类型的菜单需求，为了描述方便，这里假设你要插入本插件的组件为mytree.vue(建议用空组件来引入本插件，然后在需要使用本本插件的地方直接import该组件)
 
 | 参数 | 属性 | 默认值 | 可能的值 | 描述 |
 | ---- | ------ | :------: | :-----: | ------- |
-| listData | 必选 | —— | —— | 包含了所有菜单分支中的必要数据，listData 中每个元素代表一个菜单分支，每个分支包含4个属性：name、icon、parameter、children |
+| menuData | 必选 | —— | —— | 包含了所有菜单分支中的必要数据，menuData 中每个元素代表一个菜单分支，每个分支包含4个属性：name、icon、parameter、children |
 | open | 可选 | 1 | 0/1/数组 | open 控制各菜单分支的默认展开闭合状态，0表示所有菜单初始状态为闭合状态，1表示所有菜单初始状态为展开状态， 如果open为数组，则数组中元素值控制可各级别菜单的默认状态。 |
 | openOnly | 可选 | 0 | 0/1 | openOnly控制菜单的展开方式，openOnly 为 1 的时候同级别菜单分支在同一时间只能展开一个分支，不同级别的分支互相不受影响。 |
 | indent  | 可选 | 24 | —— | indent 控制上下级菜单缩进距离，单位为 px。当 indent 为 0 时， 上下级菜单没有缩进，所有菜单分支左边对齐。|
@@ -55,9 +55,9 @@ listtree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
 | animation | 可选 | 1 | 0/1/2 | animation 控制插件是否使用动画以及使用哪种动画，值为 0 时表示不使用动画，值为 1 或 2 时表示插件展开和闭合时使用动画，目前插件支持2种动画形式。|
 | eventArea | 可选 | 'line' | 'line'/'content' | eventArea 控制鼠标点击或经过菜单分支某区域时触发事件，值为'line'时该区域为菜单分支所在行，值为'content'时该区域为菜单分支文字内容。|
 
-### 1、listData [Array 必选]
+### 1、menuData [Array 必选]
 
-> listData 包含了各菜单分支中的必要数据，包括：菜单的标题内容（name），菜单分支对应的图标（icon），参数（parameter），以及子级菜单（children）。类似于下面这段代码：
+> menuData 包含了各菜单分支中的必要数据，包括：菜单的标题内容（name），菜单分支对应的图标（icon），参数（parameter），以及子级菜单（children）。类似于下面这段代码：
 
     [
       {
@@ -85,17 +85,17 @@ listtree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
       }
     ]
 
-菜单分支listData四个属性：
+菜单分支menuData四个属性：
 
 > __name__ [String 必选]：为菜单的文字内容；
 
-> __parameter__ [String/Array/Object 可选]：当点击菜单时parameter会传递给外部组件，与菜单相关的一些数据（比如菜单分支对应的路由地址，在数据库中的id等）都可以放在 parameter 中，你可以在组件中通过创建 Vue.prototype.$listClick 函数接收 parameter 数据并做一些相关的操作；
+> __parameter__ [String/Array/Object 可选]：当点击菜单时parameter会传递给外部组件，与菜单相关的一些数据（比如菜单分支对应的路由地址，在数据库中的id等）都可以放在 parameter 中，你可以在组件中通过创建 Vue.prototype.$menuClick 函数接收 parameter 数据并做一些相关的操作；
 
 > __icon__ [String 可选]：菜单分支前面的图标（和arrow表示的箭头图标不一样），可以使用阿里巴巴图标库的图标和Font Awesome图标库图标，icon的内容应该是阿里巴巴图标库或者Font Awesome图标库的图标样式。在使用这些图标之前需要先下载阿里巴巴图标库或者Font Awesome图标库的图标字体和css文件，然后在组件中引用该css文件，具体使用方法可以参考下面介绍的arrow图标的描述说明；
 
 > __children__ [Array 可选]：菜单的子分支。
 
-下面截图是 listtree 的一个典型例子：
+下面截图是 menutree 的一个典型例子：
 
 <img src="https://github.com/wlszl/listtree/blob/master/src/assets/listtree.png?raw=true">
 
@@ -132,18 +132,18 @@ mytree.vue 组件中的代码如下：
 
     <template>
       <div class="hello">
-        <div class="listtree"></div>
+        <div class="menutree"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'listtree'
+    import Listtree from 'menutree'
 
     Vue.use(Listtree, {
-      listData: require('./data.json'),
+      menuData: require('./data.json'),
       arrow: ['iconfont xxxxxxxxxxxxx', 'iconfont yyyyyyyyyyyyyy']
     })
-    Vue.prototype.$listClick = (parameter) => {
+    Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
       }
@@ -161,18 +161,18 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，ico
 
     <template>
       <div class="hello">
-        <div class="listtree"></div>
+        <div class="menutree"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'listtree'
+    import Listtree from 'menutree'
 
     Vue.use(Listtree, {
-      listData: require('../static/data.json'),
+      menuData: require('../static/data.json'),
       arrow: ['fa xxxxxxxxxxxxx', 'fa yyyyyyyyyyyyyy']
     })
-    Vue.prototype.$listClick = (parameter) => {
+    Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
       }
@@ -188,18 +188,18 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，fa�
 
     <template>
       <div class="hello">
-        <div class="listtree"></div>
+        <div class="menutree"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Listtree from 'listtree'
+    import Listtree from 'menutree'
 
     Vue.use(Listtree, {
-      listData: require('../static/data.json'),
+      menuData: require('../static/data.json'),
       arrow: ['../static/xxxxxxxxxxxxx', '../static/yyyyyyyyyyyyy']
     })
-    Vue.prototype.$listClick = (parameter) => {
+    Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
       }
@@ -212,7 +212,7 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 > 如果不想在菜单里使用箭头图标，可以将arrow的值直接设为0就可以了。
 
-注：权重大小 listData中的arrow > 参数arrow，如果你设置了参数arrow，同时某个分支对应的listData又设置了arrow，那么该分支图标将显示listData中设置的arrow
+注：权重大小 menuData中的arrow > 参数arrow，如果你设置了参数arrow，同时某个分支对应的menuData又设置了arrow，那么该分支图标将显示menuData中设置的arrow
 
 ### 6、arrowLeft [Number 可选]
 
@@ -228,11 +228,11 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 ### 9、eventArea [String "line" 可选]
 
-> 事件区域，eventArea有2个值分别为'line'和'content'，值为'line'时表示鼠标点击或经过菜单分支所在行时触发Vue.prototype.$listClick和Vue.prototype.$listMouseOver；值为'content'时表示鼠标点击或经过菜单分支文字内容时触发Vue.prototype.$listClick和Vue.prototype.$listMouseOver
+> 事件区域，eventArea有2个值分别为'line'和'content'，值为'line'时表示鼠标点击或经过菜单分支所在行时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver；值为'content'时表示鼠标点击或经过菜单分支文字内容时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver
 
-## listtree 样式命名规则
+## menutree 样式命名规则
 
-> 在 listtree 插件中每一级菜单及其图标都有自己的样式，如果你了解了这些样式的命名规则，你就可以为不同级的菜单定义不同的样式，甚至可以为任何一个菜单分支定义不同的样式
+> 在 menutree 插件中每一级菜单及其图标都有自己的样式，如果你了解了这些样式的命名规则，你就可以为不同级的菜单定义不同的样式，甚至可以为任何一个菜单分支定义不同的样式
 
 ### 1、菜单分支的index
 
@@ -287,6 +287,6 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
     ……
 
 
-__注意：只有包含 parameter 的菜单分支被点击时才会增加 active 样式（还记得 listData 参数里的 parameter 属性吗）。__
+__注意：只有包含 parameter 的菜单分支被点击时才会增加 active 样式（还记得 menuData 参数里的 parameter 属性吗）。__
 
 __以上所有涉及到的样式都可以在引入插件的组件中定义，但有个前提，style 属性不能设置为 scoped__
