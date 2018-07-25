@@ -16,7 +16,18 @@ menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜�
     import Menulist from 'menulist'
     import menuData from './menudata.json'
 
-    new Menulist(menuData)
+    new Menulist(menuData, {
+      /* 以下参数均为可选参数，如果取默认值则可以省略 */
+      el: ".menulist",
+      open: 1,
+      openOnly: 0,
+      indent: 24,
+      arrow: 1,
+      arrowLeft, 0,
+      arrowSize: 14,
+      animation: 1,
+      eventArea: "line",
+    })
 
     /* $menuClick 和 $menuMouseOver 非必要
     Vue.prototype.$menuClick = (parameter) => {
@@ -97,7 +108,7 @@ menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜�
 
 下面截图是 menulist 的一个典型例子：
 
-<img src="https://github.com/menulist/menulist.github.com/blob/master/src/assets/listtree.png?raw=true">
+<img src="https://github.com/wlszl/listtree/blob/master/src/assets/listtree.png?raw=true">
 
 
 ### 2、open [Number/Array 1 可选]
@@ -126,7 +137,7 @@ open 控制各菜单分支的默认展开闭合状态
 
 **a 使用阿里巴巴图标库图标** 我们假设你已经在阿里巴巴图标库创建了自己的项目并已经添加或上传了自己的图标，现在打开[阿里巴巴图标库](http://www.iconfont.cn)进入你的项目，选择 Font class，点击下载至本地，将其解压放到mytree.vue同一个文件夹下，当然你也可以直接复制使用在线链接就不需要下载到本地了，如下图：
 
-<img src="https://github.com/menulist/menulist.github.com/blob/master/src/assets/alibaba.png?raw=true">
+<img src="https://github.com/wlszl/listtree/blob/master/src/assets/alibaba.png?raw=true">
 
 mytree.vue 组件中的代码如下：
 
@@ -138,11 +149,12 @@ mytree.vue 组件中的代码如下：
     <script>
     import Vue from 'vue'
     import Menulist from 'menulist'
-    import menuData from './data.json'
+    import menuData from './menudata.json'
 
-    Vue.use(menuData, {
+    new Menulist(menuData, {
       arrow: ['iconfont xxxxxxxxxxxxx', 'iconfont yyyyyyyyyyyyyy']
     })
+
     Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
@@ -169,9 +181,10 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，ico
     import Menulist from 'menulist'
     import menuData from './data.json'
 
-    Vue.use(menuData, {
+    new Menulist(menuData, {
       arrow: ['fa xxxxxxxxxxxxx', 'fa yyyyyyyyyyyyyy']
     })
+
     Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
@@ -196,9 +209,10 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，fa�
     import Menulist from 'menulist'
     import menuData from './data.json'
 
-    Vue.use(menuData, {
+    new Menulist(menuData, {
       arrow: ['../static/xxxxxxxxxxxxx', '../static/yyyyyyyyyyyyy']
     })
+
     Vue.prototype.$menuClick = (parameter) => {
       if (parameter !== undefined) {
         ……
