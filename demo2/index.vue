@@ -25,7 +25,7 @@
         <span>  实现方法：设置参数 eventArea 的值为 "content" 。</span>
       </div>
     </a>
-    <a href="/demo2" :class="{demoActive:(elSelect==='/demo2')}" @click="getUrl()"><h3>二、仿vue-element-admin左侧菜单</h3>
+    <a href="/demo2" :class="{demoActive:(elSelect==='/demo2'||elSelect==='/demo2/')}" @click="getUrl()"><h3>二、仿vue-element-admin左侧菜单</h3>
       <div id="demo2" class="content" onclick="return false">
         <p>vue-element-admin左侧菜单有下面几个特性：</p>
         <h3>1. 每个一级菜单分支前面都包含特有的图标（此图标非箭头图标）</h3>
