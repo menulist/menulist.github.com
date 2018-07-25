@@ -106,9 +106,9 @@ menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜�
 
 > __children__ [Array 可选]：菜单的子分支。
 
-下面截图是 menulist 的一个典型例子：
+下面截图是 menulist 所有参数均取默认值的情况：
 
-<img src="https://github.com/wlszl/listtree/blob/master/src/assets/listtree.png?raw=true">
+<img src="https://github.com/menulist/menulist.github.com/blob/master/src/assets/listtree.png?raw=true">
 
 
 ### 2、open [Number/Array 1 可选]
@@ -137,7 +137,7 @@ open 控制各菜单分支的默认展开闭合状态
 
 **a 使用阿里巴巴图标库图标** 我们假设你已经在阿里巴巴图标库创建了自己的项目并已经添加或上传了自己的图标，现在打开[阿里巴巴图标库](http://www.iconfont.cn)进入你的项目，选择 Font class，点击下载至本地，将其解压放到mytree.vue同一个文件夹下，当然你也可以直接复制使用在线链接就不需要下载到本地了，如下图：
 
-<img src="https://github.com/wlszl/listtree/blob/master/src/assets/alibaba.png?raw=true">
+<img src="https://github.com/menulist/menulist.github.com/blob/master/src/assets/alibaba.png?raw=true">
 
 mytree.vue 组件中的代码如下：
 
