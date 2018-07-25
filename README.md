@@ -1,24 +1,22 @@
 
-# v-menutree——vue无限级菜单（[在线示例](https://menutree.github.io)）
-[![](https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg)](https://www.npmjs.com/package/menutree) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menutree)
+# menulist——无限级菜单列表插件（[在线示例](https://menulist.github.io)）
+[![](https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/build-passing-green.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menulist)
 
-menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
+menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
 
 ## 安装
 
-    npm install v-menutree -S
+    npm i menulist -S
 
 ## 使用
 
 > 在需要插入菜单的组件插入JS代码：
 
     import Vue from 'vue'
-    import Menutree from 'v-menutree'
+    import Menulist from 'menulist'
     import menuData from './menudata.json'
 
-    Vue.use(Menutree, {
-      menuData
-    })
+    new Menulist(menuData)
 
     /* $menuClick 和 $menuMouseOver 非必要
     Vue.prototype.$menuClick = (parameter) => {
@@ -33,15 +31,16 @@ menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
     }
      */
 
-> 在需要插入菜单的地方插入下面代码：
+> 在需要插入菜单的地方插入下面代码(下面的样式名可以通过设置参数 el 来更改)：
 
-    <div class="menutree"></div>
+    <div class="menulist"></div>
 
 
 > 其中menudata.json是菜单的数据内容，下面讲参数时会具体说明。
+
 ## 参数
 
-> menutree 一共有9个参数：menuData、open、openOnly、indent、arrow、arrowSize、arrowLeft、animation、eventArea，通过配置这9个参数可以使 menutree 适应不同类型的菜单需求，为了描述方便，这里假设你要插入本插件的组件为mytree.vue(建议用空组件来引入本插件，然后在需要使用本本插件的地方直接import该组件)
+> menulist 一共有10个参数：menuData、open、openOnly、indent、arrow、arrowSize、arrowLeft、animation、eventArea、el，通过配置这10个参数可以使 menulist 适应不同类型的菜单需求，其中只有menuData为必选项，为了描述方便，这里假设你要插入本插件的组件为mytree.vue(建议用空组件来引入本插件，然后在需要使用本插件的地方直接import该组件)
 
 | 参数 | 属性 | 默认值 | 可能的值 | 描述 |
 | ---- | ------ | :------: | :-----: | ------- |
@@ -54,6 +53,7 @@ menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
 | arrowSize | 可选 | —— | —— | arrowSize 用来控制箭头图标的尺寸，单位为px。如果没有设置该值，也可以通过设置样式lt-branch-arrow里的font-size来控制箭头尺寸。|
 | animation | 可选 | 1 | 0/1/2 | animation 控制插件是否使用动画以及使用哪种动画，值为 0 时表示不使用动画，值为 1 或 2 时表示插件展开和闭合时使用动画，目前插件支持2种动画形式。|
 | eventArea | 可选 | 'line' | 'line'/'content' | eventArea 控制鼠标点击或经过菜单分支某区域时触发事件，值为'line'时该区域为菜单分支所在行，值为'content'时该区域为菜单分支文字内容。|
+| el | 可选 | '.menulist' | —— | el 可以控制 menulist 插件挂载的位置，比如 el 等于 '.myclass' 时，menulist 将挂载在className为 myclass 的DOM上，el 等于 '#myid' 时，menulist 将挂载在id为 myid 的DOM上
 
 ### 1、menuData [Array 必选]
 
@@ -95,7 +95,7 @@ menutree 是基于vue2.x的无限级菜单插件，基本可以满足大部分�
 
 > __children__ [Array 可选]：菜单的子分支。
 
-下面截图是 menutree 的一个典型例子：
+下面截图是 menulist 的一个典型例子：
 
 <img src="https://github.com/wlszl/listtree/blob/master/src/assets/listtree.png?raw=true">
 
@@ -132,15 +132,15 @@ mytree.vue 组件中的代码如下：
 
     <template>
       <div class="hello">
-        <div class="menutree"></div>
+        <div class="menulist"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Menutree from 'v-menutree'
+    import Menulist from 'menulist'
+    import menuData from './data.json'
 
-    Vue.use(Menutree, {
-      menuData: require('./data.json'),
+    Vue.use(menuData, {
       arrow: ['iconfont xxxxxxxxxxxxx', 'iconfont yyyyyyyyyyyyyy']
     })
     Vue.prototype.$menuClick = (parameter) => {
@@ -161,15 +161,15 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，ico
 
     <template>
       <div class="hello">
-        <div class="menutree"></div>
+        <div class="menulist"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Menutree from 'v-menutree'
+    import Menulist from 'menulist'
+    import menuData from './data.json'
 
-    Vue.use(Menutree, {
-      menuData: require('../static/data.json'),
+    Vue.use(menuData, {
       arrow: ['fa xxxxxxxxxxxxx', 'fa yyyyyyyyyyyyyy']
     })
     Vue.prototype.$menuClick = (parameter) => {
@@ -188,15 +188,15 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标，fa�
 
     <template>
       <div class="hello">
-        <div class="menutree"></div>
+        <div class="menulist"></div>
       </div>
     </template>
     <script>
     import Vue from 'vue'
-    import Menutree from 'v-menutree'
+    import Menulist from 'menulist'
+    import menuData from './data.json'
 
-    Vue.use(Menutree, {
-      menuData: require('../static/data.json'),
+    Vue.use(menuData, {
       arrow: ['../static/xxxxxxxxxxxxx', '../static/yyyyyyyyyyyyy']
     })
     Vue.prototype.$menuClick = (parameter) => {
@@ -230,9 +230,9 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 > 事件区域，eventArea有2个值分别为'line'和'content'，值为'line'时表示鼠标点击或经过菜单分支所在行时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver；值为'content'时表示鼠标点击或经过菜单分支文字内容时触发Vue.prototype.$menuClick和Vue.prototype.$menuMouseOver
 
-## menutree 样式命名规则
+## menulist 样式命名规则
 
-> 在 menutree 插件中每一级菜单及其图标都有自己的样式，如果你了解了这些样式的命名规则，你就可以为不同级的菜单定义不同的样式，甚至可以为任何一个菜单分支定义不同的样式
+> 在 menulist 插件中每一级菜单及其图标都有自己的样式，如果你了解了这些样式的命名规则，你就可以为不同级的菜单定义不同的样式，甚至可以为任何一个菜单分支定义不同的样式
 
 ### 1、菜单分支的index
 

@@ -49,19 +49,20 @@
 </template>
 <script>
 export default {
-  data () {
+  data: function () {
     return {
       elSelect: location.pathname
     }
   },
   methods: {
-    getUrl () {
+    getUrl: function () {
       setTimeout(() => {
+        console.log('eeeeee')
         this.elSelect = location.pathname
       }, 0)
     }
   },
-  created () {
+  created: function () {
     console.log(location.pathname)
   }
 }

@@ -1,28 +1,34 @@
 <template>
 <div>
-  <div class="menutree"></div>
+  <div class="menulist"></div>
 </div>
 </template>
 <script>
 import Vue from 'vue'
-import Menutree from 'v-menutree'
+import Menutree from 'menulist'
 import menuData from './menudata.json'
+// Vue.use(Menutree, {
+//   menuData,
+//   arrow: 0,
+//   indent: 18,
+//   open: ['always', 0, 1],
+//   animation: 1,
+//   eventArea: 'content'
+// })
 
-Vue.use(Menutree, {
-  menuData,
-  arrow: 0,
-  indent: 18,
-  open:['always', 0, 1],
-  animation: 1,
-  eventArea:'content'
-})
+  let MTree = new Menutree(menuData, {
+    arrow: 0,
+    indent: 18,
+    open: ['always', 0, 1],
+    animation: 1,
+    eventArea: 'content'
+  })
 
-Vue.prototype.$menuClick = (r) => {
+Vue.prototype.$menuClick = function (r) {
   if (typeof r !== 'undefined') {
     console.log(r)
   }
 }
-
 
 export default {
 }

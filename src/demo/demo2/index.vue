@@ -1,20 +1,27 @@
 <template>
 <div>
-  <div class="menutree"></div>
+  <div class="menulist"></div>
 </div>
 </template>
 <script>
   import Vue from 'vue'
-  import Menutree from 'v-menutree'
+  import Menutree from 'menulist'
   import menuData from './menudata.json'
 
-  Vue.use(Menutree, {
-    menuData,
+  // Vue.use(Menutree, {
+  //   menuData,
+  //   open: 0,
+  //   arrowLeft: -8,
+  //   animation:2,
+  //   arrow:["fa fa-angle-down", 180],
+  //   arrowSize:12
+  // })
+  let MTree = new Menutree(menuData, {
     open: 0,
     arrowLeft: -8,
-    animation:2,
-    arrow:["fa fa-angle-down", 180],
-    arrowSize:12
+    animation: 2,
+    arrow: ["fa fa-angle-down", 180],
+    arrowSize: 12
   })
   // Vue.prototype.$menuMouseOver = (r) => {
   //   if (typeof r !== 'undefined') {
