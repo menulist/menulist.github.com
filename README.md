@@ -56,12 +56,12 @@ menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜�
 | 参数 | 属性 | 默认值 | 可能的值 | 描述 |
 | ---- | ------ | :------: | :-----: | ------- |
 | menuData | 必选 | —— | —— | 包含了所有菜单分支中的必要数据，menuData 中每个元素代表一个菜单分支，每个分支包含4个属性：name、icon、parameter、children |
-| open | 可选 | 1 | 0/1/数组 | open 控制各菜单分支的默认展开闭合状态，0表示所有菜单初始状态为闭合状态，1表示所有菜单初始状态为展开状态， 如果open为数组，则数组中元素值控制可各级别菜单的默认状态。 |
+| open | 可选 | 1 | 0/1/数组 | open 控制各菜单分支的默认展开闭合状态，0表示所有菜单初始状态为闭合状态，1表示所有菜单初始状态为展开状态， 如果open为数组，则数组中元素值可控制各级别菜单的默认状态。 |
 | openOnly | 可选 | 0 | 0/1 | openOnly控制菜单的展开方式，openOnly 为 1 的时候同级别菜单分支在同一时间只能展开一个分支，不同级别的分支互相不受影响。 |
 | indent  | 可选 | 24 | —— | indent 控制上下级菜单缩进距离，单位为 px。当 indent 为 0 时， 上下级菜单没有缩进，所有菜单分支左边对齐。|
 | arrow  | 可选 | 1 | 0~10/数组 | arrow 控制每个菜单分支前面的箭头图标样式，插件自带10个箭头样式，也可以使用阿里巴巴图标库的图标和Font Awesome图标库图标，arrow 为0时表示不使用箭头。 |
 | arrowLeft | 可选 | —— | —— | arrowLeft 用来控制箭头图标的与边框的距离，单位为px。如果arrowLeft为正数表示与左边的距离为arrowLeft，如果arrowLeft为负数，表示箭头与右边款的距离为arrowLeft的绝对值。|
-| arrowSize | 可选 | —— | —— | arrowSize 用来控制箭头图标的尺寸，单位为px。如果没有设置该值，也可以通过设置样式lt-branch-arrow里的font-size来控制箭头尺寸。|
+| arrowSize | 可选 | —— | —— | arrowSize 用来控制箭头图标的尺寸，单位为px。如果没有设置该值，也可以通过设置样式ml-branch-arrow里的font-size来控制箭头尺寸。|
 | animation | 可选 | 1 | 0/1/2 | animation 控制插件是否使用动画以及使用哪种动画，值为 0 时表示不使用动画，值为 1 或 2 时表示插件展开和闭合时使用动画，目前插件支持2种动画形式。|
 | eventArea | 可选 | 'line' | 'line'/'content' | eventArea 控制鼠标点击或经过菜单分支某区域时触发事件，值为'line'时该区域为菜单分支所在行，值为'content'时该区域为菜单分支文字内容。|
 | el | 可选 | '.menulist' | —— | el 可以控制 menulist 插件挂载的位置，比如 el 等于 '.myclass' 时，menulist 将挂载在className为 myclass 的DOM上，el 等于 '#myid' 时，menulist 将挂载在id为 myid 的DOM上
@@ -234,7 +234,7 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 ### 7、arrowSize [Number 可选]
 
-> arrowSize 控制箭头图标的尺寸，单位为px，该参数没有默认值，如果没有设置该值，则图标大小会由与之最近的fong-size控制，因为这里的图标本质上也是一种字体（用图片作为图标的除外），所以你也可以通过设置样式lt-branch-arrow中的font-size的值来控制箭头图标尺寸。但当图标为图片时，arrowSize和font-size对图标无效。
+> arrowSize 控制箭头图标的尺寸，单位为px，该参数没有默认值，如果没有设置该值，则图标大小会由与之最近的fong-size控制，因为这里的图标本质上也是一种字体（用图片作为图标的除外），所以你也可以通过设置样式ml-branch-arrow中的font-size的值来控制箭头图标尺寸。但当图标为图片时，arrowSize和font-size对图标无效。
 
 ### 8、animation [Number 1 可选]
 
@@ -258,46 +258,46 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 ### 2、菜单分支及其图标的 ID
 
-菜单分支的 ID 等于 "lt-branch_" 加上该分支的index，该菜单分支所对应的图标 ID 等于 "lt-branch-arrow_" 加上该分支的index。
+菜单分支的 ID 等于 "ml-branch_" 加上该分支的index，该菜单分支所对应的图标 ID 等于 "ml-branch-arrow_" 加上该分支的index。
 
 ### 3、不同级别菜单分支的 className
 
-不同级别菜单分支的 className 等于 "lt-branch_level_" 加上该菜单的级别。不同级别菜单分支对应的图标的 className 等于 "lt-branch-arrow_level_" 加上该菜单的级别。如果一个菜单分支没有子级菜单，该类菜单还拥有样式："_lt-branch_level_0_"，该类菜单的图标拥有样式："_lt-branch-arrow_level_0_"。lt-branch-arrow_level_0 和表示级别分支的 className 可同时存在。如下：
+不同级别菜单分支的 className 等于 "ml-branch_level_" 加上该菜单的级别。不同级别菜单分支对应的图标的 className 等于 "ml-branch-arrow_level_" 加上该菜单的级别。如果一个菜单分支没有子级菜单，该类菜单还拥有样式："_ml-branch_level_0_"，该类菜单的图标拥有样式："_ml-branch-arrow_level_0_"。ml-branch-arrow_level_0 和表示级别分支的 className 可同时存在。如下：
 
-    lt-branch_level_1         >>>>>>      一级菜单分支样式
-    lt-branch_level_2         >>>>>>      二级菜单分支样式
-    lt-branch_level_3         >>>>>>      三级菜单分支样式
+    ml-branch_level_1         >>>>>>      一级菜单分支样式
+    ml-branch_level_2         >>>>>>      二级菜单分支样式
+    ml-branch_level_3         >>>>>>      三级菜单分支样式
     ……
 
-    lt-branch-arrow_level_1    >>>>>>      一级菜单分支图标样式
-    lt-branch-arrow_level_2    >>>>>>      二级菜单分支图标样式
-    lt-branch-arrow_level_3    >>>>>>      三级菜单分支图标样式
+    ml-branch-arrow_level_1    >>>>>>      一级菜单分支图标样式
+    ml-branch-arrow_level_2    >>>>>>      二级菜单分支图标样式
+    ml-branch-arrow_level_3    >>>>>>      三级菜单分支图标样式
     ……
 
-    lt-branch_level_0         >>>>>>      没有子级的菜单分支的样式
-    lt-branch-arrow_level_0    >>>>>>      没有子级的菜单分支图标的样式
+    ml-branch_level_0         >>>>>>      没有子级的菜单分支的样式
+    ml-branch-arrow_level_0    >>>>>>      没有子级的菜单分支图标的样式
 
 
 ### 4、菜单分支被点击后的 className
 
-某个菜单分支被点击后会增加一个样式："_lt-branch_active_"，这个被点击的分支父级分支也会增加一个样式："_lt-branch_active_parent_"，同时这个被点击的分支所有祖先分支都会增加active样式，这些active样式名目规则是：如果祖先分支是一级分支，增加的样式名为："_lt-branch_level_1_active_"，如果祖先分支是二级分支，增加的样式名为："_lt-branch_level_2_active_" …… ，以此类推。lt-branch_active 和代表级别的active样式可同时存在，比如：点击一个二级分支，该二级分支会同时包含lt-branch_level_2_active 和 lt-branch_active 2个样式。同样，lt-branch_active_parent 和代表级别的active样式也可同时存在。
+某个菜单分支被点击后会增加一个样式："_ml-branch_active_"，这个被点击的分支父级分支也会增加一个样式："_ml-branch_active_parent_"，同时这个被点击的分支所有祖先分支都会增加active样式，这些active样式名目规则是：如果祖先分支是一级分支，增加的样式名为："_ml-branch_level_1_active_"，如果祖先分支是二级分支，增加的样式名为："_ml-branch_level_2_active_" …… ，以此类推。ml-branch_active 和代表级别的active样式可同时存在，比如：点击一个二级分支，该二级分支会同时包含ml-branch_level_2_active 和 ml-branch_active 2个样式。同样，ml-branch_active_parent 和代表级别的active样式也可同时存在。
 
-同理，某个菜单分支被点击后其对应的图标也会增加一个样式："_lt-branch-arrow_active_"，这个被点击的分支父级分支对应的图标增加一个样式："_lt-branch-arrow_active_parent_"，其祖先分支对应的图标增加的样式为："_lt-branch-arrow_level_1_active_"、 "_lt-branch-arrow_level_2_active_"、 "_lt-branch-arrow_level_3_active_" …… 。
+同理，某个菜单分支被点击后其对应的图标也会增加一个样式："_ml-branch-arrow_active_"，这个被点击的分支父级分支对应的图标增加一个样式："_ml-branch-arrow_active_parent_"，其祖先分支对应的图标增加的样式为："_ml-branch-arrow_level_1_active_"、 "_ml-branch-arrow_level_2_active_"、 "_ml-branch-arrow_level_3_active_" …… 。
 
-    lt-branch_active                 >>>>>>       当前被点击的菜单分支的样式
-    lt-branch-arrow_active            >>>>>>       当前被点击的菜单分支图标的样式
+    ml-branch_active                 >>>>>>       当前被点击的菜单分支的样式
+    ml-branch-arrow_active            >>>>>>       当前被点击的菜单分支图标的样式
 
-    lt-branch_active_parent          >>>>>>       当前被点击的菜单分支父级分支的样式
-    lt-branch-arrow_active_parent     >>>>>>       当前被点击的菜单分支父级分支图标的样式
+    ml-branch_active_parent          >>>>>>       当前被点击的菜单分支父级分支的样式
+    ml-branch-arrow_active_parent     >>>>>>       当前被点击的菜单分支父级分支图标的样式
 
-    lt-branch_level_1_active         >>>>>>       当前被点击的菜单分支祖先一级分支的样式
-    lt-branch_level_2_active         >>>>>>       当前被点击的菜单分支祖先二级分支的样式
-    lt-branch_level_3_active         >>>>>>       当前被点击的菜单分支祖先三级分支的样式
+    ml-branch_level_1_active         >>>>>>       当前被点击的菜单分支祖先一级分支的样式
+    ml-branch_level_2_active         >>>>>>       当前被点击的菜单分支祖先二级分支的样式
+    ml-branch_level_3_active         >>>>>>       当前被点击的菜单分支祖先三级分支的样式
     ……
 
-    lt-branch-arrow_level_1_active         >>>>>>       当前被点击的菜单分支祖先一级分支图标的样式
-    lt-branch-arrow_level_2_active         >>>>>>       当前被点击的菜单分支祖先二级分支图标的样式
-    lt-branch-arrow_level_3_active         >>>>>>       当前被点击的菜单分支祖先三级分支图标的样式
+    ml-branch-arrow_level_1_active         >>>>>>       当前被点击的菜单分支祖先一级分支图标的样式
+    ml-branch-arrow_level_2_active         >>>>>>       当前被点击的菜单分支祖先二级分支图标的样式
+    ml-branch-arrow_level_3_active         >>>>>>       当前被点击的菜单分支祖先三级分支图标的样式
     ……
 
 
