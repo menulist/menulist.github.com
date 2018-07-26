@@ -106,7 +106,7 @@ menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜�
 
 > __children__ [Array 可选]：菜单的子分支。
 
-下面截图是 menulist 所有参数均取默认值的情况：
+下面截图是 menulist 所有可选参数均取默认值的情况：
 
 <img src="https://github.com/menulist/menulist.github.com/blob/master/src/assets/listtree.png?raw=true">
 
@@ -226,7 +226,6 @@ xxxxxxxxxxxxx 为闭合时的图标，yyyyyyyyyyyyyy 为展开时的图标。代
 
 > 如果不想在菜单里使用箭头图标，可以将arrow的值直接设为0就可以了。
 
-注：权重大小 menuData中的arrow > 参数arrow，如果你设置了参数arrow，同时某个分支对应的menuData又设置了arrow，那么该分支图标将显示menuData中设置的arrow
 
 ### 6、arrowLeft [Number 可选]
 
