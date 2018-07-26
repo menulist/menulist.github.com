@@ -34,36 +34,36 @@ export default {
 }
 </script>
 <style>
-.lt-branch{
+.ml-branch{
   margin: 14px 0px;
   background: #fff;
 }
-.lt-branch span{
+.ml-branch span{
   color: #7f8c8d;
   cursor: pointer;
   font-size: 15px;
 }
-.lt-branch_level_1 span{
+.ml-branch_level_1 span{
   margin-left:18px;
   color: #2c3e50;
   font-weight: 600;
   font-size: 20px;
   cursor: auto;
 }
-.lt-branch_level_0 span{
+.ml-branch_level_0 span{
   color:#34495e;
 }
-.lt-branch_level_2 span:hover{
+.ml-branch_level_2 span:hover{
   border-bottom:2px solid #42b983; 
 }
-.lt-branch_level_2 span{
+.ml-branch_level_2 span{
   color: #7f8c8d;
 }
-.lt-branch_active span{
+.ml-branch_active span{
   color:#42b983;
   font-weight: bold;
 }
-.lt-branch_level_2_active span{
+.ml-branch_level_2_active span{
   color:#42b983;
   font-weight: 600;
 }
