@@ -1,8 +1,8 @@
 
-# menulist——无限级菜单列表插件（[在线示例](https://menulist.github.io)）
-[![](https://img.shields.io/badge/npm-v1.0.11-brightgreen.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/build-passing-green.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menulist)
+# menulist——无限级菜单列表插件（[在线示例](https://menulist.github.io)、[示例源码](https://github.com/menulist/menulist.github.com)）
+[![](https://img.shields.io/badge/npm-v1.0.12-brightgreen.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/build-passing-green.svg)](https://www.npmjs.com/package/menulist) [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.npmjs.com/package/menulist)
 
-menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。
+menulist 无限级菜单插件，基本可以满足大部分纵列多级别菜单的需求，并且用户定义菜单样式的自由度非常高，具体到每一级别的菜单甚至每一个菜单分支的单独样式都可以自由定义，和自己写css样式没有任何区别。菜单前的小图标可以使用系统默认的图标，也可以使用阿里巴巴图标库和Font Awesome图标库里的图标，当然你也可以使用自己设计的png、icon等格式的图标。本插件基于vue2.x，但也适用其他框架（react/anglar）。
 
 ## 安装
 

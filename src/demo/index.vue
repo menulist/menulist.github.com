@@ -4,7 +4,7 @@
     <router-view></router-view>
   </div>
   <div class="left">
-    <h1>v-menutree插件使用示例</h1>
+    <h1>menulist插件使用示例</h1>
     <hr>
     <a href="/" :class="{demoActive:(elSelect==='/')}" @click="getUrl()"><h2>一、仿vue官网左侧菜单</h2>
       <div id="demo1" class="content" onclick="return false">
